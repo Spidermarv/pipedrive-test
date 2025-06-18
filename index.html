@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Service Request Form</h1>
+            <p>Please fill out all the details below to schedule your service</p>
+        </div>
+
+        <div class="form-container">
+            <div class="info-note">
+                <p><strong>Important:</strong> Make sure to fill out all required fields marked with *</p>
+                <p>Your information will be securely processed through our CRM system</p>
+            </div>
+
+            <div id="messages"></div>
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Processing your request...</p>
+            </div>
+
+            <form id="serviceForm">
+                <div class="form-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Client Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email (optional)</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Job Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="jobType">Job Type *</label>
+                                <select id="jobType" name="jobType" required>
+                                    <option value="">Select job type</option>
+                                    <option value="maintenance">Maintenance</option>
+                                    <option value="repair">Repair</option>
+                                    <option value="installation">Installation</option>
+                                    <option value="consultation">Consultation</option>
+                                    <option value="emergency">Emergency Service</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="jobSource">Job Source *</label>
+                                <select id="jobSource" name="jobSource" required>
+                                    <option value="">Select source</option>
+                                    <option value="website">Website</option>
+                                    <option value="referral">Referral</option>
+                                    <option value="google">Google Search</option>
+                                    <option value="social">Social Media</option>
+                                    <option value="advertisement">Advertisement</option>
+                                    <option value="repeat">Repeat Customer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobDescription">Job Description (optional)</label>
+                            <textarea id="jobDescription" name="jobDescription" placeholder="Please describe the work needed..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-section">
+                        <h3 class="section-title">Service Location</h3>
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="zip-area-group">
+                            <div class="form-group">
+                                <label for="zipCode">Zip Code *</label>
+                                <input type="text" id="zipCode" name="zipCode" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="area">Area</label>
+                                <select id="area" name="area">
+                                    <option value="">Select area</option>
+                                    <option value="north">North</option>
+                                    <option value="south">South</option>
+                                    <option value="east">East</option>
+                                    <option value="west">West</option>
+                                    <option value="central">Central</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="section-title">Scheduled</h3>
+                        <div class="form-group">
+                            <label for="startDate">Start Date *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startTime">Start Time</label>
+                                <input type="time" id="startTime" name="startTime">
+                            </div>
+                            <div class="form-group">
+                                <label for="endTime">End Time</label>
+                                <input type="time" id="endTime" name="endTime">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="testSelect">Priority Level</label>
+                            <select id="testSelect" name="testSelect">
+                                <option value="">Select priority</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                                <option value="urgent">Urgent</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="submit-section">
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        Submit Service Request
+                    </button>
+                    <p style="color: white; margin-top: 15px; opacity: 0.9;">
+                        Your request will be processed and you'll receive confirmation shortly
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
