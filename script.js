@@ -36,7 +36,6 @@ document.getElementById('serviceForm').addEventListener('submit', async function
         this.reset();
         
     } catch (error) {
-        // Show error message
         messages.innerHTML = `
             <div class="error-message">
                 <strong>Error:</strong> ${error.message}
